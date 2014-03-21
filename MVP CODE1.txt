@@ -1,0 +1,93 @@
+Module Module1
+    Dim na(100000) As String
+    Dim s(100000) As Double
+    Dim p(100000) As Double
+
+    Dim tm(100000) As String
+    Dim tmp1 As Double
+    Dim tmp2 As Double
+    Dim tmp3 As String = ""
+    Dim n As Integer
+    Sub Main()
+
+        n = Console.ReadLine
+        For j = 1 To n
+            'Select Case j
+            '    Case 1
+            '        'My.Computer.Clipboard.SetText("Kobe 1200 5000")
+            '    Case 2
+            '        '  My.Computer.Clipboard.SetText("James 2000 4000")
+            '    Case 3
+            '        '    My.Computer.Clipboard.SetText("Wade 1800 4500")
+            'End Select
+            Dim st1 = Console.ReadLine
+            tm = Split(st1, " ", 3)
+            na(j) = tm(0)
+            s(j) = tm(1)
+            p(j) = tm(2)
+            'Dev(st1, j)
+        Next
+
+        For i = 1 To n
+            For j = 1 To i
+                If p(j) < p(j + 1) Then
+                    tmp1 = s(j)
+                    s(j) = s(j + 1)
+                    s(j + 1) = tmp1
+
+                    tmp2 = p(j)
+                    p(j) = p(j + 1)
+                    p(j + 1) = tmp2
+
+
+                    tmp3 = na(j)
+                    na(j) = na(j + 1)
+                    na(j + 1) = tmp3
+
+                End If
+            Next
+        Next
+
+        For i = 1 To n
+            For j = 1 To i
+                If s(j) < s(j + 1) Then
+                    tmp1 = s(j)
+                    s(j) = s(j + 1)
+                    s(j + 1) = tmp1
+
+                    tmp2 = p(j)
+                    p(j) = p(j + 1)
+                    p(j + 1) = tmp2
+
+
+                    tmp3 = na(j)
+                    na(j) = na(j + 1)
+                    na(j + 1) = tmp3
+
+                End If
+            Next
+        Next
+
+        For j = 1 To 3
+            Console.WriteLine("{0} {1} {2}", na(j), s(j), p(j))
+        Next
+        Console.ReadLine()
+    End Sub
+    Sub Dev(ByVal st$, ByVal no#)
+        Dim c% = 0
+        For j = 1 To Len(st)
+            If Mid(st, j, 1) = " " Then
+                c += 1
+                Select Case c
+                    Case 1
+                        na(no) = Mid(st, j, c - 1)
+                    Case 2
+                        s(no) = Mid(st, j, c - 1)
+                    Case 3
+                        p(no) = Mid(st, j, c - 1)
+                End Select
+            End If
+        Next
+    End Sub
+
+End Module
