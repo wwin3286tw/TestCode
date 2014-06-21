@@ -1,0 +1,19 @@
+Module Module1
+    Dim a$ = "65DB3140DD856AF6B5B2C15A2CF237FAA9128F0BA27954B29D7D348BECB36696DC13DD7603FA33A0F62433960D13D36F7FF9BFBA72E62D6C36AEF6DD825A1B9C0C9FE5B2AF297609FFCE1BCF187AA50F"
+    Sub Main()
+        Dim c# = 0
+        Dim st$ = ""
+        Dim ns$ = ""
+        For j = 1 To Len(a)
+            c += 1
+            st &= Mid(a, j, 1)
+            If c Mod 2 = 0 Then
+                ns &= st & " "
+                st = ""
+            End If
+        Next
+        Debug.Print(ns)
+        Console.Read()
+    End Sub
+
+End Module
