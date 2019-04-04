@@ -1,3 +1,3 @@
 # TestCode
-Code Save1
-Just a homework, learning hw to using github.
+* Code Save1
+Just a homework, learning how to using github.
